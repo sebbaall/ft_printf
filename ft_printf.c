@@ -6,7 +6,7 @@
 /*   By: sabahmad <sabahmad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 11:16:18 by sabahmad          #+#    #+#             */
-/*   Updated: 2026/09/30 15:01:17 by sabahmad         ###   ########.fr       */
+/*   Updated: 2026/09/30 15:32:16 by sabahmad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,15 @@ static int	formatter(char format, va_list *list)
 	if (format == 's')
 		return (ft_string(va_arg(*list, char *)));
 	if (format == 'd' || format == 'i')
-		return (ft_numbers(va_arg(*list, long)));
+		return (ft_numbers(va_arg(*list, int)));
 	if (format == 'u')
 		return (ft_unsigned_d(va_arg(*list, unsigned int)));
 	if (format == 'p')
 		return (ft_pointer(va_arg(*list, void *)));
 	if (format == 'x')
-		return (ft_hexa(va_arg(*list, unsigned long)));
+		return (ft_hexa(va_arg(*list, unsigned int)));
 	if (format == 'X')
-		return (ft_upperhexa(va_arg(*list, unsigned long)));
+		return (ft_upperhexa(va_arg(*list, unsigned int)));
 	if (format == '%')
 		return (ft_percent());
 	return (-1);
@@ -41,7 +41,7 @@ int	ft_printf(const char *str, ...)
 
 	va_start(list, str);
 	len = 0;
-	while (*str)
+	while (*str && *(str + 1))
 	{
 		if (*str == '%')
 		{

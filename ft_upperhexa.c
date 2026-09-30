@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_HEXA.c                                          :+:      :+:    :+:   */
+/*   ft_upperhexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabahmad <sabahmad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 14:17:46 by sabahmad          #+#    #+#             */
-/*   Updated: 2026/09/30 14:32:24 by sabahmad         ###   ########.fr       */
+/*   Updated: 2026/09/30 15:30:35 by sabahmad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	ft_upperhexa(unsigned long nbr)
 {
 	int		len;
-	char	c;
 	char	*hexa;
 
 	hexa = "0123456789ABCDEF";
@@ -25,8 +24,7 @@ int	ft_upperhexa(unsigned long nbr)
 		if (len == -1)
 			return (-1);
 	}
-	c = hexa[nbr % 16];
-	if (write(1, &c, 1) == -1)
+	if (write(1, &hexa[nbr % 16], 1) == -1)
 		return (-1);
 	return (len + 1);
 }
