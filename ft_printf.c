@@ -6,7 +6,7 @@
 /*   By: sabahmad <sabahmad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 11:16:18 by sabahmad          #+#    #+#             */
-/*   Updated: 2026/09/30 15:32:16 by sabahmad         ###   ########.fr       */
+/*   Updated: 2026/09/30 15:36:44 by sabahmad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	ft_printf(const char *str, ...)
 
 	va_start(list, str);
 	len = 0;
-	while (*str && *(str + 1))
+	while (*str)
 	{
 		if (*str == '%')
 		{
