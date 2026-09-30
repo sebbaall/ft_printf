@@ -6,7 +6,7 @@
 /*   By: sabahmad <sabahmad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/30 14:17:46 by sabahmad          #+#    #+#             */
-/*   Updated: 2026/09/30 15:35:49 by sabahmad         ###   ########.fr       */
+/*   Updated: 2026/09/30 15:42:29 by sabahmad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_upperhexa(unsigned long nbr)
 
 	len = 0;
 	hexa = "0123456789ABCDEF";
-	while (nbr >= 16)
+	if (nbr >= 16)
 	{
 		len = ft_upperhexa(nbr / 16);
 		if (len == -1)
