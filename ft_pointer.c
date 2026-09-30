@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_char.c                                          :+:      :+:    :+:   */
+/*   ft_pointer.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: sabahmad <sabahmad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/29 11:25:05 by sabahmad          #+#    #+#             */
-/*   Updated: 2026/09/29 11:25:46 by sabahmad         ###   ########.fr       */
+/*   Created: 2026/09/30 11:32:55 by sabahmad          #+#    #+#             */
+/*   Updated: 2026/09/30 14:32:47 by sabahmad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_char(char c)
+int	ft_pointer(void *ptr)
 {
-	return (write(1, &c, 1));
+	unsigned long	address;
+	int				len;
+
+	address = (unsigned long)ptr;
+	len = 0;
+	if (write(1, "0x", 2) == -1)
+		return (-1);
+	len = ft_hexa(address);
+	if (len == -1)
+		return (-1);
+	return (len + 2);
 }
