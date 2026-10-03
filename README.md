@@ -1,6 +1,6 @@
-# ft_printf
-
 *This activity has been created as part of the 42 curriculum by sabahmad.*
+
+# ft_printf
 
 ## Description
 
@@ -18,7 +18,7 @@ The main goal of this project is to understand and practice:
 * Pointers and addresses
 * File descriptors and `write()`
 
-## Supported Conversions
+### Supported Conversions
 
 The mandatory part supports the following conversions:
 
@@ -34,7 +34,7 @@ The mandatory part supports the following conversions:
 |    `%X`    | Uppercase hexadecimal   |
 |    `%%`    | Percent sign            |
 
-## Compilation
+## Instructions
 
 The project compiles into a static library called `libftprintf.a`.
 
@@ -51,7 +51,7 @@ make fclean
 make re
 ```
 
-## Usage
+### Usage
 
 Include the `ft_printf.h` header in your source file:
 
@@ -79,7 +79,7 @@ int main(void)
 }
 ```
 
-## Project Structure
+### Project Structure
 
 ```text
 ft_printf/
@@ -96,17 +96,22 @@ ft_printf/
 └── README.md
 ```
 
-## References
+## Resources
 
 * C manual pages (`man`)
 * https://en.cppreference.com
 * https://sourceware.org
 
-## Ai usage
+### Ai usage
 
 AI was used as a learning and reference tool during this project.
 I provided the relevant manual pages and used them to ask for explanations of C concepts and functions.
 The code was written, tested, debugged, and understood by me.
+
+## Algorithm
+
+`ft_printf` parses the format string from left to right. Normal characters are printed directly, while `%` is used to identify a conversion specifier and retrieve the corresponding argument from the `va_list`. Each conversion is handled by a dedicated function, and the total number of printed characters is returned.
+
 
 ## Author
 

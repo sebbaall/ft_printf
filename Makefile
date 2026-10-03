@@ -6,7 +6,7 @@
 #    By: sabahmad <sabahmad@learner.42.tech>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/09/29 11:27:14 by sabahmad          #+#    #+#              #
-#    Updated: 2026/09/30 15:00:33 by sabahmad         ###   ########.fr        #
+#    Updated: 2026/10/02 12:11:04 by sabahmad         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ SRCS = ft_printf.c \
 			 ft_hexa.c \
 			 ft_upperhexa.c \
 			 ft_pointer.c \
-			 ft_percent.c
+			 ft_percent.c \
 
 OBJS = $(SRCS:.c=.o)
 

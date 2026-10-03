@@ -6,7 +6,7 @@
 /*   By: sabahmad <sabahmad@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 11:16:18 by sabahmad          #+#    #+#             */
-/*   Updated: 2026/09/30 15:36:44 by sabahmad         ###   ########.fr       */
+/*   Updated: 2026/10/03 12:43:18 by sabahmad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	ft_printf(const char *str, ...)
 	int		checker;
 
 	va_start(list, str);
+	if (!str)
+		return (va_end(list), -1);
 	len = 0;
 	while (*str)
 	{
@@ -50,12 +52,10 @@ int	ft_printf(const char *str, ...)
 				return (va_end(list), -1);
 			len += checker;
 		}
+		else if (write(1, &(*str), 1) == -1)
+			return (va_end(list), -1);
 		else
-		{
-			if (write(1, &(*str), 1) == -1)
-				return (va_end(list), -1);
 			len++;
-		}
 		str++;
 	}
 	va_end(list);
